@@ -220,11 +220,10 @@ for x = Tr+Gr+1 : (Nr/2)-(Gr+Tr)
             end
         end
         
-        values = pow2db(noise_level/(2*(Td+Gd+1)*2*(Tr+Gr+1)-(Gr*Gd)-1));
-        threshold = values + Offset;
-        CUT = RDM(x,y);
+        ave_value = pow2db(noise_level/(2*(Td+Gd+1)*2*(Tr+Gr+1)-(Gr*Gd)-1));
+        threshold = ave_value + Offset;
         
-        if (CUT > threshold)
+        if (RDM(x,y) > threshold)
             CFAR(x,y) = 1;
         end
     end
