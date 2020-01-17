@@ -33,9 +33,8 @@ The detailed steps are as below:
     - 2D CFAR
        -  Implementation steps: 
            - Loop over each cell from FFT data, that is standardized by dividing by max value  
-           - 
-           - 
-           - If the cell value is larger than the noise + offset, the CFAR value is 1, other wise 0
+           - for each cell, take average value inside training area (excluding guard area) + noise 
+           - If the cell value is larger than the average value + offset, the CFAR value is 1, other wise 0
        -  Selection of training cells, guard cessl and offset are as below: 
            - Training cells: 10 x 8 (range x velocity(doppler))
            - Guard cells: 4 x 4 
